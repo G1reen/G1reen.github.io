@@ -7,8 +7,6 @@
     <!-- SEO相关 -->
     
             
-                                    <meta name="robots" content="noindex,follow">
-                                    
                                             
                                                 <!-- 渲染优化 -->
                                                 <meta name="renderer" content="webkit">
@@ -22,12 +20,16 @@
                                                 
                                                     <title>
                                                         
-                                                            Category: 项目练习 -
+                                                            广播机制 -
                                                                 
                                                                     Hexo
                                                     </title>
                                                     
+                                                        <meta name="keywords" content="广播机制">
+                                                        
                                                             
+                                                                <meta name="description" content="这期让我们来详细的了解一下Android的广播机制。广播机制简介。[1]标准广播[2]有序广播">
+                                                                
 
                                                                     <!-- feed -->
                                                                     
@@ -336,27 +338,12 @@
                 <div class='body-wrapper'>
                     
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -366,11 +353,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2019/02/28/Android%E6%B2%89%E6%B5%B8%E5%BC%8F%E6%A8%A1%E5%BC%8F/">
-      Android沉浸式模式
+  <h1 class="title">
+    <a href="/2018/07/05/%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6/">
+      广播机制
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -393,9 +380,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/Android/%E9%A1%B9%E7%9B%AE%E7%BB%83%E4%B9%A0/' rel="nofollow">
+    <a href='/categories/Android/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Android/项目练习</p>
+      <p>Android</p>
     </a>
   </div>
 
@@ -406,14 +393,9 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2019-02-28</p>
+    <p>发布于：2018-07-05</p>
   </a>
 </div>
-
-            
-          
-            
-              
 
             
           
@@ -431,146 +413,196 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>自己对于沉浸式理解是类似于一些手游，或者用影视类的App全屏播放的时候状态栏会随之自动的隐藏，当用户想调出状态栏就可以通过在原始状态栏的位置下拉即可显示出来。</p>
-<p>个人感觉这个沉浸式的功能只在一些影视App和手游上面会用的比较多。对于普遍的App使用较少。<br>不过这里我也抱着学习态度也来完成了这一个沉浸式功能。</p>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2019/02/28/Android%E6%B2%89%E6%B5%B8%E5%BC%8F%E6%A8%A1%E5%BC%8F/">
-            Read More <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>这期让我们来详细的了解一下Android的广播机制。<br>广播机制简介。<br>[1]标准广播<br>[2]有序广播</p>
+<a id="more"></a>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+<h3 id="标准广播"><a href="#标准广播" class="headerlink" title="标准广播"></a>标准广播</h3><div class="note"><p>标准广播是一种完全由异步执行的广播，在广播发出后所有广播接收器都会在同一时间收到这一条广播信息，因此它之间没有任何先后顺序，这种广播的效率会比较高，但是这种广播是不可以被截断的。</p></div>
+
+<h3 id="有序广播"><a href="#有序广播" class="headerlink" title="有序广播"></a>有序广播</h3><div class="note"><p>有序广播是一种同步执行的广播，在广播发出后，同一时间只会有一个广播接收器收到此条广播信息，当这个广播接收器中的逻辑执行完之后才会给后面的广播传递，因此此时的广播器是有先后顺序的，优先级高的广播接收器会最先收到广播信息，并且还可以截断正在传递的广播，这样后面的广播器就接收不到广播信息了。</p></div>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
   
 
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2019/02/18/Android%E5%BC%B9%E5%B9%95%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/">
-      Android弹幕功能实现
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="https://g1reen.github.io/" target="_blank" rel="nofollow noopener">
-    <img src="https://img-blog.csdnimg.cn/20200708173753634.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5NDM4NA==,size_16,color_FFFFFF,t_70">
-    <p>Green</p>
-  </a>
-</div>
-
-            
-          
-            
-              
   
-  <div class='new-meta-item category'>
-    <a href='/categories/Android/%E9%A1%B9%E7%9B%AE%E7%BB%83%E4%B9%A0/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Android/项目练习</p>
-    </a>
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=http://yoursite.com/2018/07/05/%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6/>http://yoursite.com/2018/07/05/%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6/</a></p>
+          
+        
+      </blockquote>
+    
   </div>
+</section>
+
+  
+
+  
 
 
-            
+              
+            </div>
           
-            
-              <div class="new-meta-item date">
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2018-07-05T00:00:00+08:00">
   <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2019-02-18</p>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2018-07-05</p>
   </a>
 </div>
 
-            
-          
-            
-              
-
-            
-          
-            
-              
-
-            
-          
-        </div>
         
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
       
-        <p>引入DanmakuFlameMaster开源库</p>
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>广播机制</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://img-blog.csdnimg.cn/20200708173753634.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5NDM4NA==,size_16,color_FFFFFF,t_70"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATgAAAE4CAAAAADqFLC2AAADrUlEQVR42u3aUbLiMAwEQO5/6d0DvKKSGRkQVPsPCInV/hEjHv+saj0QgAMHDpwFDtwSuEe5nn3/z4OevP90YzfvM91PXS84cODAgQMHDtwyuFOFTaHb+93d77RecODAgQMHDhy4rXDTjd69z9X10wb77v7TesGBAwcOHDhw4H4FLt142winwODAgQMHDhw4cOBmcG0AOh0gt4NtcODAgQMHDhy4b4WLB7Rl8DgtsA0610zywYEDBw4cOHDgDsG1jeW3vq7rBQcOHDhw4MCBWwI3XacG0mmDOx101/WCAwcOHDhw4MAtgbt6QDrATYHSxjqFTPdxLAEGBw4cOHDgwIF7M1wLcvfz9KBaiHaQfVkXOHDgwIEDBw7cEri00HYwPd7wsGFOn3M7AQYHDhw4cODAgfsQXNuQto1z2sC2jfkUNP7lAA4cOHDgwIED92a4Vw2O24CyBWsPKg5GwYEDBw4cOHDglsO1geR0cN0Wlh54XTc4cODAgQMHDtwSuLtfSBvZNCicgsWB5OkEGBw4cODAgQMH7s1w7aA5bTRPN9rt9W0QCw4cOHDgwIEDtw3uVQPoU8Hn6f1MA1Bw4MCBAwcOHLhtcKcLvVtYexDpHwrTz+MEGBw4cODAgQMH7kNwaVDYvn8KKm1c033FQSY4cODAgQMHDtyH4e4OctMGui1k+kfEU88DBw4cOHDgwIHbCpe+nhZ0GqINWuPgExw4cODAgQMHbglce4PpxtLg9O5BpMFmeiDgwIEDBw4cOHBb4NJBcgvaAk4D1NMDbXDgwIEDBw4cuC1wpxrZ9ADaxjo9kPS6y8AVHDhw4MCBAwduKdy0gHYQ3R5Q2qi3wSg4cODAgQMHDtw2uDY4bDfcDqpPvd82/ODAgQMHDhw4cNvgXhUoThvZu/drB93pfcGBAwcOHDhw4LbDpQW0QO2guW3UTw20wYEDBw4cOHDgtsCdGjinBZ0KMqdw6X7BgQMHDhw4cOC2wE3XqYCzHXxPA9J4sA4OHDhw4MCBA7cE7lGu08HlqQHz9CCO/3IABw4cOHDgwIF7MVza8E4bySl821CnzwcHDhw4cODAgfsWuOlAOh04TwfTpwfSl5+DAwcOHDhw4MD9CFzbMLf3uz04LoPTy4MABw4cOHDgwIH7MbhPDbTb6+qDBgcOHDhw4MCBWwp3aiCdBp9TkPYA08AUHDhw4MCBAwduG9zpB6VAKfj0ANqgFBw4cODAgQMHbgucFQ7CEYADBw6cBQ7cZ9d/rFWDarauXJwAAAAASUVORK5CYII=">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
       
     </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2019/02/18/Android%E5%BC%B9%E5%B9%95%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/">
-            Read More <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
   </section>
-</article>
 
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2019/02/18/Android%E5%BC%B9%E5%B9%95%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Android弹幕功能实现</p>
+                <p class='content'>引入DanmakuFlameMaster开源库
+
+
+Android弹幕功能实现
+            引入开源库 在build.gradle添加如下代码            bibi弹幕效果...</p>
+              </a>
+            
+            
+              <a class='next' href='/2018/06/23/Activity%E5%9B%9B%E7%A7%8D%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F/'>
+                <p class='title'>Activity四种启动模式<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>Activity的四种启动模式：Standard、SingleTop、SingleTask、SingleInstance
+
+1.Standard模式Standard模式是Adnroid的默认启动...</p>
+              </a>
+            
           </div>
         
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
       
-    
-  </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
 
   
 
 
-    
-  
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '广播机制',
+      tools: true
+    }
+  </script>
+
 
 </div>
 <aside class='l_side'>
   
-  
-
   
     
     
@@ -611,137 +643,22 @@
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
     
-      
-        <a class='avatar flat-box' href='/about/'>
-          <img no-lazy src='https://img-blog.csdnimg.cn/20200708173753634.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5NDM4NA==,size_16,color_FFFFFF,t_70'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-          <p>学习使我快乐</p>
-
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="https://g1reen.github.io/"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:1509392470@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/G1reen"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
-    
+        <section class="widget toc-wrapper shadow desktop mobile">
+            
   <header>
     
-      <a href='/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
-    <div class='content'>
-      <ul class="entry navigation">
+                <div class='content'>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#标准广播"><span class="toc-text">标准广播</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有序广播"><span class="toc-text">有序广播</span></a></li></ol>
+                </div>
+        </section>
         
-          <li><a class="flat-box"
-            title="/categories/Android/" href="/categories/Android/"
-            id="categoriesAndroid"
-            ><div class='name'>Android</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Android/%E9%A1%B9%E7%9B%AE%E7%BB%83%E4%B9%A0/" href="/categories/Android/%E9%A1%B9%E7%9B%AE%E7%BB%83%E4%B9%A0/"
-            id="categoriesAndroidE9A1B9E79BAEE7BB83E4B9A0"
-            ><div class='name'>项目练习</div><div class='badge'>(2)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
   
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Activity%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F/" style="font-size: 14px; color: #999">Activity启动模式</a> <a href="/tags/%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6/" style="font-size: 24px; color: #555">四大组件</a> <a href="/tags/%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6/" style="font-size: 14px; color: #999">广播机制</a> <a href="/tags/%E5%BC%B9%E5%B9%95%E6%95%88%E6%9E%9C/" style="font-size: 14px; color: #999">弹幕效果</a> <a href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" style="font-size: 14px; color: #999">快捷键</a> <a href="/tags/%E6%B2%89%E6%B5%B8%E5%BC%8F/" style="font-size: 14px; color: #999">沉浸式</a>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-
-<section class="widget qrcode shadow desktop mobile">
-  
-  <header>
-    
-      <i class="fas fa-mobile fa-fw" aria-hidden="true"></i><span class='name'>博主微信</span>
-    
-  </header>
-
-
-  <div class='content article-entry'>
-    
-      
-        <img src='https://img-blog.csdnimg.cn/20200713204652126.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5NDM4NA==,size_16,color_FFFFFF,t_70'
-        >
-      
-    
-  </div>
-</section>
 
   
 
@@ -922,6 +839,60 @@
 
 
 
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
+    appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
 
 
 

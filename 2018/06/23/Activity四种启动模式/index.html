@@ -2,12 +2,11 @@
 <html>
 <head hexo-theme='https://volantis.js.org/#2.6.6'>
     <title>Green&Blog</title>
+    <link href="https://img-blog.csdnimg.cn/20200708173753634.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5NDM4NA==,size_16,color_FFFFFF,t_70" rel="shortcut icon">
     <meta charset="utf-8">
     <!-- SEO相关 -->
     
             
-                                        <meta name="robots" content="noindex,follow">
-                                        
                                             
                                                 <!-- 渲染优化 -->
                                                 <meta name="renderer" content="webkit">
@@ -21,12 +20,16 @@
                                                 
                                                     <title>
                                                         
-                                                            Tag: ~弹幕~ -
+                                                            Activity四种启动模式 -
                                                                 
                                                                     Hexo
                                                     </title>
                                                     
+                                                        <meta name="keywords" content="Activity启动模式">
+                                                        
                                                             
+                                                                <meta name="description" content="Activity的四种启动模式：Standard、SingleTop、SingleTask、SingleInstance">
+                                                                
 
                                                                     <!-- feed -->
                                                                     
@@ -335,25 +338,12 @@
                 <div class='body-wrapper'>
                     
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -363,11 +353,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2018/07/18/Android%E5%BC%B9%E5%B9%95%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/">
-      Android弹幕功能实现
+  <h1 class="title">
+    <a href="/2018/06/23/Activity%E5%9B%9B%E7%A7%8D%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F/">
+      Activity四种启动模式
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -390,9 +380,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/Android/%E9%A1%B9%E7%9B%AE%E7%BB%83%E4%B9%A0/' rel="nofollow">
+    <a href='/categories/Android/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Android/项目练习</p>
+      <p>Android</p>
     </a>
   </div>
 
@@ -403,14 +393,9 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2018-07-18</p>
+    <p>发布于：2018-06-23</p>
   </a>
 </div>
-
-            
-          
-            
-              
 
             
           
@@ -428,40 +413,193 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>Activity的四种启动模式：Standard、SingleTop、SingleTask、SingleInstance</p>
+<a id="more"></a>
+<h3 id="1-Standard模式"><a href="#1-Standard模式" class="headerlink" title="1.Standard模式"></a>1.Standard模式</h3><p>Standard模式是Adnroid的默认启动方式，不在配置文件中做任何的设置，那么这个Activity就是Standard模式，这个模式下Activity可以有多个实例，每次启动Activity，无论任务栈中是否存在这个Activity实例，系统都会创建一个新的Activity实例。</p>
+<h3 id="2-SingleTop模式"><a href="#2-SingleTop模式" class="headerlink" title="2.SingleTop模式"></a>2.SingleTop模式</h3><p>SingleTop模式和Srandard模式十分的相识，主要的区别是SingTop模式的Activity位于任务栈的栈顶，再去启动他的时候不会重新创建新的实例，如果不位于栈顶的话就会创建新的实例。</p>
+<h3 id="3-SingleTask模式"><a href="#3-SingleTask模式" class="headerlink" title="3.SingleTask模式"></a>3.SingleTask模式</h3><p>SingleTask模式（单例）的Activity在同一个Task内之有一个实例，如果Activity位于栈顶，则不会创建新的Acticity实例，这一点和SingleTop模式一样，但是Activity已经存在的并且不在栈顶，那么系统会把该Activty移到栈顶，并把已经在栈顶的Activity出栈。</p>
+<h3 id="4-SingleInstance模式"><a href="#4-SingleInstance模式" class="headerlink" title="4.SingleInstance模式"></a>4.SingleInstance模式</h3><p>SingleInstance模式是单例的，但是和SingleTask不一样，SingleTask只是任务栈内单例，系统是可以有多个SingleTask Activity实例，但是SingleInstance在整个系统中只有唯一一个实例，启动SingleInstanceActivity的时候系统会新创建一个新得任务栈，并且这个任务栈里面只有他一个Activity。</p>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=http://yoursite.com/2018/06/23/Activity%E5%9B%9B%E7%A7%8D%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F/>http://yoursite.com/2018/06/23/Activity%E5%9B%9B%E7%A7%8D%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
       
-        <p>引入DanmakuFlameMaster开源库</p>
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2018-06-23T00:00:00+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2018-06-23</p>
+  </a>
+</div>
+
+        
       
-    </div>
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Activity%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Activity启动模式</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        <div class="button readmore">
-          <a href="/2018/07/18/Android%E5%BC%B9%E5%B9%95%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/">
-            Read More <i class="fas fa-chevron-right"></i>
-          </a>
+        
+        <div class='hoverbox'>
+          <a><img src="https://img-blog.csdnimg.cn/20200708173753634.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5NDM4NA==,size_16,color_FFFFFF,t_70"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVgAAAFYCAAAAAAzB7ucAAAEZUlEQVR42u3aQXIkIQwEwPn/p70P2HCASgJ2YpPb2J42SvqAKvT5sY6sDwKwYC2wYMFaYK/AfsL11wPD769+/msB4XNXz+96gAULFixYsGDBgr0Lu30B3txo9fMuYBV69wCmPMCCBQsWLFiwYMG+gU030m0Idp9f/fu08Yg9wIIFCxYsWLBgwX4lbPWi372wVwP5dD9gwYIFCxYsWLBg/0/YtMFIA/Dp4BssWLBgwYIFCxbsvw3bhdndULVBmAreq///2SQMWLBgwYIFCxYs2C3Y6Qv1t3+OPcCCBQsWLFiwYMFege2uqQC5W2g1CD+1wIIFCxYsWLBgwd6BnSokvZBXoU8NZozVDxYsWLBgwYIFC/YK7C7Q7gbS76eNQ1rH7v7LAyRgwYIFCxYsWLBgr8JWL9BVsGrgvVtIGrynDcvye2DBggULFixYsGCvwnYv8t2AOB0MmQKZaoDAggULFixYsGDB3oGdGohIg+r0ANJgfQp4GXSDBQsWLFiwYMGCfQKbbnR6kGMquK4G7ek+wIIFCxYsWLBgwd6BrQa71cYgvWhPDWxMvxDL54MFCxYsWLBgwYK9AptetKcGPdLC00D7eOAOFixYsGDBggUL9irsbiDd3UD63OkBkanvLxsEsGDBggULFixYsEdgpy766Qa7Ax7lwocPbjmwARYsWLBgwYIFC/YIbHUjU1DVhmT381SDEO8XLFiwYMGCBQsW7BXYFCgt5NaAR/XFqf5+u/MCCxYsWLBgwYIFewR298LfHXBIA+z0BegedBykgwULFixYsGDBgn0C2w2AqwMdaaCcrulgvjywARYsWLBgwYIFC3YENr34T284DbKrAybdA1h+DyxYsGDBggULFuwT2KmCpgcm0oB9F3CqLrBgwYIFCxYsWLB3YXehpwPwuIDiBT7dbxkcLFiwYMGCBQsW7BXY7gW7epGvwnUhuvspB/FgwYIFCxYsWLBgr8CmYFWQNGhO/647gBIfPFiwYMGCBQsWLNgrsN2B327QPH3A3cYhDdLBggULFixYsGDB3oWtBrzThaWwaWDdbRSWBwIWLFiwYMGCBQv2CmwKUQ3AuwV0IdIAu1oPWLBgwYIFCxYs2Lewn3CdCsCrEFMvTPnAwIIFCxYsWLBgwT6FrRZUXVODxNXCqw1BOZAHCxYsWLBgwYIF+wQ2bQRS0O4BdZ/zaS6wYMGCBQsWLFiwb2BvFbQLWg2apweSuw0EWLBgwYIFCxYs2DuwYxfjZsDcDdan9lt9AZadF1iwYMGCBQsWLNijsKeC6mrBU0F294CrBwAWLFiwYMGCBQv2LWx1QKN7Md8NqKsBeRqIV+sACxYsWLBgwYIF+92w6YU6fW4bYGiQYzmwARYsWLBgwYIFC/arYNOAvBpop43H1MFdbxDAggULFixYsGDBHhmE6Abf6YW9+tzpBgMsWLBgwYIFCxbsG9juwMOrhmFq31ONAliwYMGCBQsWLNg7sNbsAgsWrAUWLFgL7NH1B81okjZXe9EuAAAAAElFTkSuQmCC">
+          </div>
         </div>
       
     
-  </section>
-</article>
+  </div>
+</div>
 
-          </div>
+
+
         
       
-    
+    </div>
   </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2018/07/05/%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>广播机制</p>
+                <p class='content'>这期让我们来详细的了解一下Android的广播机制。广播机制简介。[1]标准广播[2]有序广播
+
+
+标准广播标准广播是一种完全由异步执行的广播，在广播发出后所有广播接收器都会在同一时间收到这一条...</p>
+              </a>
+            
+            
+              <a class='next' href='/2018/06/22/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/'>
+                <p class='title'>Activity生命周期<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>这期让我们来了解Activity的生命周期是怎么样进行的.Activity有五大状态七大方法,具体是什么呢？
+
+Activity五大状态启动状态
+Activity的启动状态非常的迅速，当Acti...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
   
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
 
   
 
 
-    
-  
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Activity四种启动模式',
+      tools: true
+    }
+  </script>
+
+
 </div>
 <aside class='l_side'>
   
@@ -469,54 +607,33 @@
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
+<section class="widget list shadow desktop mobile">
+  
+  <header>
     
-      
-        <a class='avatar flat-box' href='/about/'>
-          <img no-lazy src='https://img-blog.csdnimg.cn/20200708173753634.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5NDM4NA==,size_16,color_FFFFFF,t_70'/>
-        </a>
-      
+      <i class="fas fa-bullhorn fa-fw fa-fw fa-fw" aria-hidden="true"></i><span class='name'>本站公告</span>
     
-    
-      <div class='text'>
-        
-        
-          <p>学习使我快乐</p>
+  </header>
 
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
+
+  <div class='content'>
+    <ul class="list entry navigation">
+      
+        <li><a class="flat-box" title="https://github.com/G1reen" href="https://github.com/G1reen"
           
-            <a href="https://g1reen.github.io/"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
           
-        
+          id="https:githubcomG1reen"
+          >
+          <div class='name'>
+            
+              <i class="fab fa-github fa-fw fa-fw" aria-hidden="true"></i>
+            
+            博主Github
+          </div>
           
-            <a href="mailto:1509392470@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/G1reen"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
+        </a></li>
+      
+    </ul>
   </div>
 </section>
 
@@ -525,62 +642,22 @@
   
     
     
-  
 
-  <section class="widget category shadow desktop">
     
+        <section class="widget toc-wrapper shadow desktop mobile">
+            
   <header>
     
-      <a href='/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
-    <div class='content'>
-      <ul class="entry navigation">
+                <div class='content'>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Standard模式"><span class="toc-text">1.Standard模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-SingleTop模式"><span class="toc-text">2.SingleTop模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-SingleTask模式"><span class="toc-text">3.SingleTask模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-SingleInstance模式"><span class="toc-text">4.SingleInstance模式</span></a></li></ol>
+                </div>
+        </section>
         
-          <li><a class="flat-box"
-            title="/categories/Android/" href="/categories/Android/"
-            id="categoriesAndroid"
-            ><div class='name'>Android</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Android/Gilde/" href="/categories/Android/Gilde/"
-            id="categoriesAndroidGilde"
-            ><div class='name'>Gilde</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Android/%E9%A1%B9%E7%9B%AE%E7%BB%83%E4%B9%A0/" href="/categories/Android/%E9%A1%B9%E7%9B%AE%E7%BB%83%E4%B9%A0/"
-            id="categoriesAndroidE9A1B9E79BAEE7BB83E4B9A0"
-            ><div class='name'>项目练习</div><div class='badge'>(2)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Android-Studio/" style="font-size: 14px; color: #999">Android Studio</a> <a href="/tags/Gilde/" style="font-size: 14px; color: #999">Gilde</a> <a href="/tags/%E5%BC%B9%E5%B9%95/" style="font-size: 14px; color: #999">~弹幕~</a>
-    </div>
-  </section>
-
-
   
 
   
@@ -720,8 +797,8 @@
 
     <script type="text/javascript">
       $(function(){
-        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/67239FBB-E15D-4F4F-8EE8-0F1C9F3C4E7C.jpeg"];
-        if ('false' == 'true') {
+        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/BBC19066-E176-47C2-9D22-48C81EE5DF6B.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/67239FBB-E15D-4F4F-8EE8-0F1C9F3C4E7C.jpeg", "https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/B951AE18-D431-417F-B3FE-A382403FF21B.jpeg"];
+        if ('true' == 'true') {
           function shuffle(arr){
             /*From countercurrent-time*/
             var n = arr.length;
@@ -762,6 +839,60 @@
 
 
 
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
+    appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
 
 
 

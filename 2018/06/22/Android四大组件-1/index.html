@@ -7,8 +7,6 @@
     <!-- SEO相关 -->
     
             
-                                    <meta name="robots" content="noindex,follow">
-                                    
                                             
                                                 <!-- 渲染优化 -->
                                                 <meta name="renderer" content="webkit">
@@ -22,12 +20,16 @@
                                                 
                                                     <title>
                                                         
-                                                            Category: 项目练习 -
+                                                            Android四大组件 -
                                                                 
                                                                     Hexo
                                                     </title>
                                                     
+                                                        <meta name="keywords" content="四大组件">
+                                                        
                                                             
+                                                                <meta name="description" content=" Android四大组件分别有activity、service、content provider、broadcast receiver，那么各个组件分别有什么作用呢？">
+                                                                
 
                                                                     <!-- feed -->
                                                                     
@@ -336,27 +338,12 @@
                 <div class='body-wrapper'>
                     
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -366,11 +353,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2019/02/28/Android%E6%B2%89%E6%B5%B8%E5%BC%8F%E6%A8%A1%E5%BC%8F/">
-      Android沉浸式模式
+  <h1 class="title">
+    <a href="/2018/06/22/Android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6-1/">
+      Android四大组件
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -393,9 +380,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/Android/%E9%A1%B9%E7%9B%AE%E7%BB%83%E4%B9%A0/' rel="nofollow">
+    <a href='/categories/Android/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Android/项目练习</p>
+      <p>Android</p>
     </a>
   </div>
 
@@ -406,14 +393,9 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2019-02-28</p>
+    <p>发布于：2018-06-22</p>
   </a>
 </div>
-
-            
-          
-            
-              
 
             
           
@@ -431,146 +413,215 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>自己对于沉浸式理解是类似于一些手游，或者用影视类的App全屏播放的时候状态栏会随之自动的隐藏，当用户想调出状态栏就可以通过在原始状态栏的位置下拉即可显示出来。</p>
-<p>个人感觉这个沉浸式的功能只在一些影视App和手游上面会用的比较多。对于普遍的App使用较少。<br>不过这里我也抱着学习态度也来完成了这一个沉浸式功能。</p>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2019/02/28/Android%E6%B2%89%E6%B5%B8%E5%BC%8F%E6%A8%A1%E5%BC%8F/">
-            Read More <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p> Android四大组件分别有activity、service、content provider、broadcast receiver，那么各个组件分别有什么作用呢？</p>
+<a id="more"></a>
+<p>下面来说说Android的四大组件分别有什么，并且有什么作用。</p>
+<h3 id="1-Activity"><a href="#1-Activity" class="headerlink" title="1.Activity"></a>1.Activity</h3><details cyan open><summary> <p>Activity</p> </summary>
+              <div class='content'>
+              <div class='checkbox checked'><input type="radio" checked="checked"/>            <p>一个Activity通常就是一个单独的屏幕（窗口）。</p>            </div><div class='checkbox checked'><input type="radio" checked="checked"/>            <p>Activity之间通过Intent进行通信。</p>            </div><div class='checkbox checked'><input type="radio" checked="checked"/>            <p>android应用中每一个Activity都必须要在AndroidManifest.xml配置文件中声明，否则系统将不识别也不执行该Activity。</p>            </div>
+              </div>
+            </details>
+<h3 id="2-service"><a href="#2-service" class="headerlink" title="2.service"></a>2.service</h3><details cyan open><summary> <p>service</p> </summary>
+              <div class='content'>
+              <p>(1)service用于在后台完成用户指定的操作。service分为两种：<br>（第一）started（启动）：当应用程序组件（如activity）调用startService()方法启动服务时，服务处于started状态。</p><p>（第二）bound（绑定）：当应用程序组件调用bindService()方法绑定到服务时，服务处于bound状态。</p><p>(2)startService()与bindService()区别：</p><p>started service（启动服务）是由其他组件调用startService()方法启动的，这导致服务的onStartCommand()方法被调用。当服务是started状态时，其生命周期与启动它的组件无关，并且可以在后台无限期运行，即使启动服务的组件已经被销毁。因此，服务需要在完成任务后调用stopSelf()方法停止，或者由其他组件调用stopService()方法停止。</p><p>使用bindService()方法启用服务，调用者与服务绑定在了一起，调用者一旦退出，服务也就终止，大有“不求同时生，必须同时死”的特点。</p><p>需要在应用程序配置文件中声明全部的service，使用标签。</p><p>Service通常位于后台运行，它一般不需要与用户交互，因此Service组件没有图形用户界面。Service组件需要继承Service基类。Service组件通常用于为其他组件提供后台服务或监控其他组件的运行状态。</p>
+              </div>
+            </details>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+<h3 id="3-content-provider"><a href="#3-content-provider" class="headerlink" title="3.content provider"></a>3.content provider</h3><details cyan open><summary> <p>content provider</p> </summary>
+              <div class='content'>
+              <p>android平台提供了Content Provider使一个应用程序的指定数据集提供给其他应用程序。其他应用可以通过ContentResolver类从该内容提供者中获取或存入数据。</p><p>只有需要在多个应用程序间共享数据是才需要内容提供者。例如，通讯录数据被多个应用程序使用，且必须存储在一个内容提供者中。它的好处是统一数据访问方式。</p><p>ContentProvider实现数据共享。ContentProvider用于保存和获取数据，并使其对所有应用程序可见。这是不同应用程序间共享数据的唯一方式，因为android没有提供所有应用共同访问的公共存储区。</p><p>开发人员不会直接使用ContentProvider类的对象，大多数是通过ContentResolver对象实现对ContentProvider的操作。</p><p>ContentProvider使用URI来唯一标识其数据集，这里的URI以content://作为前缀，表示该数据由ContentProvider来管理。</p>
+              </div>
+            </details>
+
+<h3 id="4-broadcast-receiver"><a href="#4-broadcast-receiver" class="headerlink" title="4.broadcast receiver"></a>4.broadcast receiver</h3><details cyan open><summary> <p>broadcast receiver</p> </summary>
+              <div class='content'>
+              <p>你的应用可以使用它对外部事件进行过滤，只对感兴趣的外部事件(如当电话呼入时，或者数据网络可用时)进行接收并做出响应。广播接收器没有用户界面。然而，它们可以启动一个activity或serice来响应它们收到的信息，或者用NotificationManager来通知用户。通知可以用很多种方式来吸引用户的注意力，例如闪动背灯、震动、播放声音等。一般来说是在状态栏上放一个持久的图标，用户可以打开它并获取消息。</p><p>广播接收者的注册有两种方法，分别是程序动态注册和AndroidManifest文件中进行静态注册。</p><p>动态注册广播接收器特点是当用来注册的Activity关掉后，广播也就失效了。静态注册无需担忧广播接收器是否被关闭，只要设备是开启状态，广播接收器也是打开着的。也就是说哪怕app本身未启动，该app订阅的广播在触发时也会对它起作用。</p><p>Android还有一套本地广播机制，就是为了解决广播的安全问题，因为系统全局广播可以被其他任何程序接收到，一些携带关键性数据的广播就可能被其他应用程序截获。而本地广播机制发出的广播只能在应用程序的内部进行传递，并且只能接收来自本应用程序的广播，这样就不存在安全问题了。</p><p>今天了解了Android的静态注册和动态注册，Android在8.0以后，为了提高效率，删除了静态注册，防止关闭App后广播还在，造成内存泄漏。现在静态注册的广播需要指定包名，而动态注册就没有这个问题。并且，无论是静态注册广播还是动态注册广播，在接收广播的时候都不能拦截广播，否则会报错。<br>谷歌官网的原文是：应用无法使用其清单注册大部分隐式广播。不过，是不能对大部分的广播进行注册，但还是有些广播可以进行静态注册的，比如对接收Android开机的广播通过静态注册还是能够正常接收的。</p>
+              </div>
+            </details>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
   
 
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2019/02/18/Android%E5%BC%B9%E5%B9%95%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/">
-      Android弹幕功能实现
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="https://g1reen.github.io/" target="_blank" rel="nofollow noopener">
-    <img src="https://img-blog.csdnimg.cn/20200708173753634.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5NDM4NA==,size_16,color_FFFFFF,t_70">
-    <p>Green</p>
-  </a>
-</div>
-
-            
-          
-            
-              
   
-  <div class='new-meta-item category'>
-    <a href='/categories/Android/%E9%A1%B9%E7%9B%AE%E7%BB%83%E4%B9%A0/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Android/项目练习</p>
-    </a>
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=http://yoursite.com/2018/06/22/Android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6-1/>http://yoursite.com/2018/06/22/Android%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6-1/</a></p>
+          
+        
+      </blockquote>
+    
   </div>
+</section>
+
+  
+
+  
 
 
-            
+              
+            </div>
           
-            
-              <div class="new-meta-item date">
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2018-06-22T00:00:00+08:00">
   <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2019-02-18</p>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2018-06-22</p>
   </a>
 </div>
 
-            
-          
-            
-              
-
-            
-          
-            
-              
-
-            
-          
-        </div>
         
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
       
-        <p>引入DanmakuFlameMaster开源库</p>
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>四大组件</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://img-blog.csdnimg.cn/20200708173753634.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5NDM4NA==,size_16,color_FFFFFF,t_70"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVgAAAFYCAAAAAAzB7ucAAAEW0lEQVR42u3aS3IjIRAFQN//0poDTCjMqw8t28lOMy0aEi2o8vt6GSvjCwFYsAZYsGANsFdgv4rjvwmHnz+d59181ee66wILFixYsGDBggV7F/b4Any48HSe042egr3d+ND63+4DLFiwYMGCBQsW7COw6cLKF+mheU7nOwVse4AFCxYsWLBgwYL9VbDdQiMtPKYKBLBgwYIFCxYsWLB/G7YalKg+Vy0gwIIFCxYsWLBgwf5M2K2gxdbGqsGNj0/CgAULFixYsGDBgj2CnQ5e/PTPZQ+wYMGCBQsWLFiwV2C7I1149fvVi/53BcxreIAFCxYsWLBgwYK9A1u9IE81mtMCJH1f90Di/YMFCxYsWLBgwYK9ApsGL6qBjDSwkRYWaaGw1rgHCxYsWLBgwYIF+whsF7jawK42rKcKlO57wYIFCxYsWLBgwd6F7Ta0p4IZVbAxkKmgCFiwYMGCBQsWLNirsGmhMLWw7UBGNQhSBQYLFixYsGDBggV7F7Z7wT/dWDWo0b3wpz+A8kGCBQsWLFiwYMGCvQo79flWQ/z0gKYKmrHKCyxYsGDBggULFuwobDdAkTbOpwIVaYGQFgavcIAFCxYsWLBgwYK9A7t14e42oNODTQ+4WggdFwhgwYIFCxYsWLBgV2GrF/ep4EX1+7eeixvtYMGCBQsWLFiwYK/AdhfSbSRvBUbSxnU1GBJXXmDBggULFixYsGBHYKeCCtOFxNS83UBGu/ICCxYsWLBgwYIFuwLbDWZMBx+6QYutAMlYEgYsWLBgwYIFCxbsKOz02GpgVwuEagERzw8WLFiwYMGCBQv2Kmw1iFGF7RYM1YKi+wP59nmwYMGCBQsWLFiwV2BvBRyqG5++wFd/AMffBwsWLFiwYMGCBXsFNr2oTwUkUqhqw3u7QGlXXmDBggULFixYsGBHYKsL2z6obsGyHdwACxYsWLBgwYIFexe22thNG8inQFMBi2rh0A18gAULFixYsGDBgv0M2HSB1SDGKVi6rur7qz8AsGDBggULFixYsHdhU4jTjXYv9Ok83cZ9uzACCxYsWLBgwYIF+wjs1AurQYnqRf50/vQ98fNgwYIFCxYsWLBgr8JOBx6mgxRpY377/+O/IIAFCxYsWLBgwYJdhS03eMPGd3oAaYGw9fnbfwcLFixYsGDBggX7CGy3UZzO0w2AdAuU7jrBggULFixYsGDBPgPbHdsbmWpQrzW23wU2wIIFCxYsWLBgwa7CTl2QT4G7F/unGuPH84MFCxYsWLBgwYK9Clu9UE8fTHf+6oFUCyCwYMGCBQsWLFiwnwGbNpzTBU5d5Kvr6QZUygUCWLBgwYIFCxYs2I+ETS/63UZzN7AxtS+wYMGCBQsWLFiwvws23djUfGnDPC1gwIIFCxYsWLBgwX4m7DRIusBu43qqIEnnAQsWLFiwYMGCBfsMbDq6F/gqxNa61woEsGDBggULFixYsCuwxuwACxasARYsWAPs6vgHRc0UmAhplpwAAAAASUVORK5CYII=">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
       
     </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2019/02/18/Android%E5%BC%B9%E5%B9%95%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/">
-            Read More <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
   </section>
-</article>
 
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2018/06/22/Activity%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Activity生命周期</p>
+                <p class='content'>这期让我们来了解Activity的生命周期是怎么样进行的.Activity有五大状态七大方法,具体是什么呢？
+
+Activity五大状态启动状态
+Activity的启动状态非常的迅速，当Acti...</p>
+              </a>
+            
+            
+              <a class='next' href='/2018/06/20/AndroidStudio%E5%BF%AB%E6%8D%B7%E9%94%AE/'>
+                <p class='title'>AndroidStudio快捷键<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>Android Studio实用快捷键汇总
+
+Android Studio实用快捷键汇总　　1.Ctrl + B
+　　跳入/跳出方法或者资源文件。将鼠标光标定位到某个方法或者资源id的调用处，按...</p>
+              </a>
+            
           </div>
         
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
       
-    
-  </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
 
   
 
 
-    
-  
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Android四大组件',
+      tools: true
+    }
+  </script>
+
 
 </div>
 <aside class='l_side'>
   
-  
-
   
     
     
@@ -611,137 +662,22 @@
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
     
-      
-        <a class='avatar flat-box' href='/about/'>
-          <img no-lazy src='https://img-blog.csdnimg.cn/20200708173753634.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5NDM4NA==,size_16,color_FFFFFF,t_70'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-          <p>学习使我快乐</p>
-
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="https://g1reen.github.io/"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:1509392470@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/G1reen"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
-    
+        <section class="widget toc-wrapper shadow desktop mobile">
+            
   <header>
     
-      <a href='/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
-    <div class='content'>
-      <ul class="entry navigation">
+                <div class='content'>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Activity"><span class="toc-text">1.Activity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-service"><span class="toc-text">2.service</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-content-provider"><span class="toc-text">3.content provider</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-broadcast-receiver"><span class="toc-text">4.broadcast receiver</span></a></li></ol>
+                </div>
+        </section>
         
-          <li><a class="flat-box"
-            title="/categories/Android/" href="/categories/Android/"
-            id="categoriesAndroid"
-            ><div class='name'>Android</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Android/%E9%A1%B9%E7%9B%AE%E7%BB%83%E4%B9%A0/" href="/categories/Android/%E9%A1%B9%E7%9B%AE%E7%BB%83%E4%B9%A0/"
-            id="categoriesAndroidE9A1B9E79BAEE7BB83E4B9A0"
-            ><div class='name'>项目练习</div><div class='badge'>(2)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
   
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Activity%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F/" style="font-size: 14px; color: #999">Activity启动模式</a> <a href="/tags/%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6/" style="font-size: 24px; color: #555">四大组件</a> <a href="/tags/%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6/" style="font-size: 14px; color: #999">广播机制</a> <a href="/tags/%E5%BC%B9%E5%B9%95%E6%95%88%E6%9E%9C/" style="font-size: 14px; color: #999">弹幕效果</a> <a href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/" style="font-size: 14px; color: #999">快捷键</a> <a href="/tags/%E6%B2%89%E6%B5%B8%E5%BC%8F/" style="font-size: 14px; color: #999">沉浸式</a>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-
-<section class="widget qrcode shadow desktop mobile">
-  
-  <header>
-    
-      <i class="fas fa-mobile fa-fw" aria-hidden="true"></i><span class='name'>博主微信</span>
-    
-  </header>
-
-
-  <div class='content article-entry'>
-    
-      
-        <img src='https://img-blog.csdnimg.cn/20200713204652126.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDE5NDM4NA==,size_16,color_FFFFFF,t_70'
-        >
-      
-    
-  </div>
-</section>
 
   
 
@@ -922,6 +858,60 @@
 
 
 
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
+    appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'robohash',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
 
 
 
